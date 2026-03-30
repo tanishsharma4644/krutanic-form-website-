@@ -273,7 +273,6 @@ body {
   box-shadow: 0 0 0 1px rgba(255,255,255,0.08) inset, 0 32px 64px rgba(0,0,0,0.6), 0 0 60px rgba(250, 15, 0, 0.12);
   position: relative; 
   overflow: hidden;
-  animation: cardBreath 10s ease-in-out infinite;
 }
 @keyframes cardBreath {
   0%, 100% { transform: scale(1); box-shadow: 0 0 0 1px rgba(255,255,255,0.08) inset, 0 32px 64px rgba(0,0,0,0.6), 0 0 40px rgba(250, 15, 0, 0.08); }
@@ -323,7 +322,7 @@ body {
   padding: 14px 18px;
   color: #ffffff; 
   font-family: 'Outfit', sans-serif; 
-  font-size: 0.98rem; 
+  font-size: 16px; 
   font-weight: 500;
   outline: none; 
   width: 100%; 
@@ -423,3 +422,17 @@ body {
 
 /* Confetti */
 @keyframes cfall{to{transform:translateY(112vh) rotate(720deg);opacity:0}}
+
+/* Disable animations on mobile to prevent lag */
+@media (max-width: 768px) {
+  .card-inner, .dark-image-card, #geos {
+    animation: none !important;
+  }
+  .geo {
+    animation: none !important;
+    display: none !important;
+  }
+  #bg-canvas * {
+    animation: none !important;
+  }
+}
